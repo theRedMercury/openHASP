@@ -10,7 +10,7 @@
 #include "lv_conf.h"       /*To see all the widgets*/
 #include "lv_theme_hasp.h" /*To see all the widgets*/
 
-//#if LV_USE_THEME_HASP
+// #if LV_USE_THEME_HASP
 
 #include "src/lv_misc/lv_gc.h"
 
@@ -26,10 +26,10 @@
 
 /*SCREEN*/
 
-#define COLOR_SCR (IS_LIGHT ? LV_COLOR_WHITE : lv_color_hex(0x545b6a))
-#define COLOR_SCR_GRAD (IS_LIGHT ? LV_COLOR_SILVER : lv_color_hex(0x222b3a))
+#define COLOR_SCR (IS_LIGHT ? LV_COLOR_WHITE : lv_color_hex(0x000000))
+#define COLOR_SCR_GRAD (IS_LIGHT ? LV_COLOR_SILVER : lv_color_hex(0x000000))
 #define COLOR_SCR_TEXT (IS_LIGHT ? lv_color_hex(0x3b3e42) : lv_color_hex(0xefefef))
-//#define HUE_COLOR lv_color_hex(0x2F8CD8)
+// #define HUE_COLOR lv_color_hex(0x2F8CD8)
 #define HUE_COLOR theme.color_primary
 #define CHK_COLOR theme.color_secondary
 
@@ -251,11 +251,11 @@ static void basic_init(lv_style_int_t border_width, lv_style_int_t outline_width
 
     lv_style_set_bg_color(&styles->pretty, LV_STATE_DEFAULT, COLOR_SCR);
     lv_style_set_bg_grad_color(&styles->pretty, LV_STATE_DEFAULT, COLOR_SCR_GRAD);
-    lv_style_set_bg_grad_dir(&styles->pretty, LV_STATE_DEFAULT, LV_GRAD_DIR_VER);
+    lv_style_set_bg_grad_dir(&styles->pretty, LV_STATE_DEFAULT, LV_GRAD_DIR_NONE);
     lv_style_set_bg_opa(&styles->pretty, LV_STATE_DEFAULT, LV_OPA_COVER);
 
     lv_style_set_line_width(&styles->pretty, LV_STATE_DEFAULT, 1);
-    lv_style_set_line_color(&styles->pretty, LV_STATE_DEFAULT, lv_color_make(0x20, 0x20, 0x20));
+    lv_style_set_line_color(&styles->pretty, LV_STATE_DEFAULT, lv_color_make(0x0, 0x0, 0x0));
 
     lv_style_set_scale_end_line_width(&styles->pretty, LV_STATE_DEFAULT, 1);
     lv_style_set_scale_end_color(&styles->pretty, LV_STATE_DEFAULT, theme.color_primary);
@@ -267,10 +267,10 @@ static void basic_init(lv_style_int_t border_width, lv_style_int_t outline_width
     // lv_style_set_value_color(&styles->pretty, LV_STATE_DEFAULT, color_scr_text);
     lv_style_set_value_font(&styles->pretty, LV_STATE_DEFAULT, theme.font_normal);
 
-    lv_style_set_border_opa(&styles->pretty, LV_STATE_DEFAULT, LV_OPA_30);
+    lv_style_set_border_opa(&styles->pretty, LV_STATE_DEFAULT, LV_OPA_TRANSP);
     lv_style_set_border_width(&styles->pretty, LV_STATE_DEFAULT, border_width);
     lv_style_set_border_color(&styles->pretty, LV_STATE_DEFAULT, BORDER_COLOR);
-    lv_style_set_border_color(&styles->pretty, LV_STATE_EDITED, lv_color_darken(theme.color_secondary, LV_OPA_30));
+    lv_style_set_border_color(&styles->pretty, LV_STATE_EDITED, lv_color_darken(theme.color_secondary, LV_OPA_TRANSP));
 
     lv_style_set_outline_width(&styles->pretty, LV_STATE_DEFAULT, outline_width);
 
@@ -288,7 +288,7 @@ static void basic_init(lv_style_int_t border_width, lv_style_int_t outline_width
     lv_style_set_radius(&styles->pretty_color, LV_STATE_DEFAULT, LV_DPI / 15);
     lv_style_set_bg_color(&styles->pretty_color, LV_STATE_DEFAULT, COLOR_BG);
     lv_style_set_bg_grad_color(&styles->pretty_color, LV_STATE_DEFAULT, COLOR_BG_GRAD);
-    lv_style_set_bg_grad_dir(&styles->pretty_color, LV_STATE_DEFAULT, LV_GRAD_DIR_VER);
+    lv_style_set_bg_grad_dir(&styles->pretty_color, LV_STATE_DEFAULT, LV_GRAD_DIR_NONE);
 
     lv_style_set_bg_opa(&styles->pretty_color, LV_STATE_DEFAULT, LV_OPA_COVER);
     lv_style_set_line_width(&styles->pretty_color, LV_STATE_DEFAULT, 1);
@@ -360,7 +360,7 @@ static void basic_init(lv_style_int_t border_width, lv_style_int_t outline_width
     lv_style_set_bg_grad_color(&styles->btn, LV_STATE_DEFAULT, COLOR_BTN_GRAD);
     lv_style_set_bg_grad_color(&styles->btn, LV_STATE_PRESSED, COLOR_BTN_PR_GRAD);
 
-    lv_style_set_bg_grad_dir(&styles->btn, LV_STATE_DEFAULT, LV_GRAD_DIR_VER);
+    lv_style_set_bg_grad_dir(&styles->btn, LV_STATE_DEFAULT, LV_GRAD_DIR_NONE);
     //    lv_style_set_bg_color(&styles->btn, LV_STATE_DEFAULT, COLOR_BTN);
     //    lv_style_set_bg_color(&styles->btn, LV_STATE_PRESSED, COLOR_BTN_PR);
 
@@ -1522,4 +1522,4 @@ static void style_init_reset(lv_style_t* style)
         lv_style_init(style);
 }
 
-//#endif
+// #endif
