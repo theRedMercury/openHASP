@@ -1,0 +1,2 @@
+jsonl {"page":0,"id":239,"obj":"msgbox","text":"offline","auto_close":20000}
+jsonl {"page":0,"id":6,"obj":"btn","x":220,"y":1,"w":30,"h":40,"text_font":"2","text":"\uE5A9","text_color":"gray","bg_opa":0,"border_width":0}

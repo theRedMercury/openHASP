@@ -1,0 +1,5 @@
+https://nightly.openhasp.com/
+
+esptool.py  --port COM7 erase_flash
+
+esptool.py --port COM7 --baud 921600 write_flash 0x0 .\wt32-sc01-plus_full_16MB_v0.7.0-rc6_2f4092b.bin
